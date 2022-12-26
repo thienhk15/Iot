@@ -8235,7 +8235,7 @@ textarea.form-control {
       font-size: 20px;
       color: #fff; }
   .info-wrap .dbox .text {
-    width: calc(100% - 50px); }
+    width: calc(100% - 25px); }
 
 @media (min-width: 992px) {
   .info-wrap {
