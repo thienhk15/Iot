@@ -21,8 +21,8 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">ĐỒ ÁN CUỐI KỲ</h2>
-                    <h2 class="heading-section">VẬT LÝ CHO CNTT</h2>
+					<h2 class="heading-section ">ĐỒ ÁN CUỐI KỲ</h2>
+                    <h2 class="heading-section ">VẬT LÝ CHO CNTT</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -32,18 +32,21 @@
 							<div class="col-md-7 d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h5 class="mb-4">Nồng độ khí ga:</h5>
-	
-				      		
-									
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="gas" id="gas" readonly="true" value={{gas}}>  
-												</div>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="gas" id="gas" readonly="true" value={{gas}}>  
 											</div>
-    
-										
 										</div>
+									</div>
+									{{!-- <h5 class="mb-4">Time:</h5>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="time" id="time" readonly="true" >  
+											</div>
+										</div>
+									</div> --}}
 									
 									<div class="col-md-12">
 										<label class="col-md-12">Auto:</label>
@@ -77,6 +80,25 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center" style="margin-top: 50px ;">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section ">ALERT HISTORY</h2>
+					<ul class="responsive-table" id="history">
+    <li class="table-header">
+      <div class="col ">Time</div>
+      {{!-- <div class="col col-2">Cause</div> --}}
+      
+    </li>
+    <li class="table-row">
+      <div class="col" >10:20:14 - 3/11/2022</div>
+      {{!-- <div class="col col-2" data-label="Time">John Doe</div> --}}
+      
+      {{!-- <div class="col col-4" data-label="Payment Status">Pending</div> --}}
+    
+  </ul>
+                    
 				</div>
 			</div>
 		</div>

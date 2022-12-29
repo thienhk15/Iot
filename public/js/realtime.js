@@ -33,8 +33,54 @@ var manual_off = document.getElementById("manual-off");
 var gas =  database.ref("baochay").child("p");
 gas.on("value",snap=>{
     let val = snap.val();
+    let vall = parseInt(val);
+    if(vall >= 60){
+        var i = document.createElement('li');
+        i.className = "table-row";
+
+        var row1 = document.createElement('div');
+        //var row2 = document.createElement('div');
+        row1.className = "col";
+    
+        row1.innerHTML = getTime();
+
+        
+        
+
+        i.appendChild(row1);
+        
+        document.getElementById("history").appendChild(i);
+    }
     console.log('val:' +val);
     document.getElementById("gas").setAttribute("value",val+" ppm" );   
+});
+
+//get fire
+var fire =  database.ref("baochay").child("fire");
+fire.on("value",snap=>{
+    let val = snap.val()+"";
+    console.log('val:' +val);
+    //document.getElementById("gas").setAttribute("value",val+" ppm" );  
+    if(snap.val()=="0"){
+        var newItem = document.createElement('li');
+        newItem.className = "table-row";
+
+        var row1 = document.createElement('div');
+        //var row2 = document.createElement('div');
+        row1.className = "col ";
+    
+        row1.innerHTML = getTime();
+
+        
+        
+
+        newItem.appendChild(row1);
+        
+        document.getElementById("history").appendChild(newItem);
+        
+    } 
+    let history = document.getElementById("history");
+
 });
 
 //change mode
@@ -57,9 +103,21 @@ manual_on.onclick = function(){
     })
 }
 
-manual_off.onclick = function(){
+manual_off.onclick = function(){    
     database.ref("baochay").update({
         "relay" : "A0"
     })
+    alert("Relay has been set to manual ( On ) and will be setted to Auto (On) right now");
+    database.ref("baochay").update({
+        "relay" : "B1"
+    })
+
+}
+
+function getTime(){
+    var now = new Date();
+    let time = now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" - "+now.getDay()+"/"+now.getMonth()+"/"+now.getFullYear();
+    //let time = "cc";
+    return time;
 }
 
