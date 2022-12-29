@@ -107,7 +107,7 @@ manual_off.onclick = function(){
     database.ref("baochay").update({
         "relay" : "A0"
     })
-    alert("Relay has been set to manual ( On ) and will be setted to Auto (On) right now");
+    alert("Relay has been set to manual ( Off ) and will be setted to Auto (On) right now");
     database.ref("baochay").update({
         "relay" : "B1"
     })
